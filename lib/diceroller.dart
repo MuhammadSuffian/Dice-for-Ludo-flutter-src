@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_roll_v1/style_text.dart';
 import 'dart:math';
@@ -20,15 +19,16 @@ class _diceroller extends State<diceroller>{
       } while(currentdicestate==predicestate);
     });
   }
+  @override
   Widget build(context){
     return(
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset("assets/images/dice-$currentdicestate.png",width: 200,),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             textstyling("You got $currentdicestate"),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             OutlinedButton(onPressed: DiceRoller, child:textstyling("Roll DICE"))
           ],
         )
